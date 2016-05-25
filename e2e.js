@@ -27,8 +27,9 @@ myAppDev.run(function($httpBackend, $resource) {
     return [200, user, {}];
   });
 
-  $httpBackend.whenGET('views/list-view.html')
-  .respond($resource("/views/list-view.html").query());
+  $httpBackend.whenGET('views/list-view.html').passThrough();;
+  $httpBackend.whenGET('views/title-panel.html').passThrough();;
+  $httpBackend.whenGET('views/trello-panel.html').passThrough();;
 
 });
 })(window.angular);

@@ -25,7 +25,7 @@ myApp.controller('main', function($http) {
   };
 
   ctrl.getUsers();
-  
+
 }).config(function($routeProvider){
         $routeProvider.when('/list',
         {
@@ -37,11 +37,13 @@ myApp.controller('main', function($http) {
             templateUrl:'views/title-panel.html',
             controller:'TitlePanelController'
         });
-       // $routeProvider.when('/trellopanel',
-       // {
-       //     templateUrl:'views/trello-panel.html',
-        //    controller:'TrelloPanelController'
-        //});
+        $routeProvider.when('/trellopanel',
+        {
+            templateUrl:'views/trello-panel.html',
+            controller:'TrelloPanelController'
+        });
+
+        $routeProvider.otherwise({redirectTo: '/list'});
      });
 
 //})(window.angular);
