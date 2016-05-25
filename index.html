@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-httpbackend-e2e-testing-production</title>
+  
+
+
+  <script src="angular.js"></script>
+  <script src="angular-mocks.js"></script>
+  <script src="angular-route.js"></script>
+  <script src="angular-resource.js"></script>
+  <script src="app.js"></script>
+  <script src="e2e.js"></script>
+  <script src="js/list_view.js"></script>
+  <script src="js/title_panel_view.js"></script>
+  <script src="js/trello-panel_view.js"></script>
+
+
+  
+</head>
+<body ng-app="myAppE2E">
+  <nav><a href="#/list">Вопрос</a>|<a href="#/titlepanel">Ответить</a>|<a href="#/trellopanel">Ответить1</a></nav>
+  <div ng-view></div>
+  <div ng-controller="main as $ctrl">
+<form name="newUserForm" ng-submit="$ctrl.addUser($ctrl.newUser)">
+  <input type="text" ng-model="$ctrl.newUser.name">
+  <input type="submit" value="Add User">
+</form>
+
+
+
+<h1>Users</h1>
+<ul>
+  <li ng-repeat="user in $ctrl.users">{{user.name}}</li>
+</ul>
+</div>
+</body>
+</html>
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
