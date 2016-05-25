@@ -1,0 +1,38 @@
+.tile.tile-medium {
+    height: 200px;
+    width: 150px;
+}
+
+.tile.tile-teal {
+    background-color: #00aba9;
+}
+
+.tile {
+    display: block;
+    cursor: pointer;
+    -webkit-perspective: 0;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .2s;
+    float: left;
+    min-width: 75px;
+    min-height: 75px;
+    text-align: center;
+    background-color: #2e8bcc;
+    z-index: 1;
+    border: 4px #fff solid;
+    color: #fff;
+}
+
+.tile:hover {
+	background-color: #1f75bf;
+}
+
+.profile-pic{
+	width: 80%;
+}
+
+.small-pad{
+	width: 1px;
+	height:5px;
+}
+

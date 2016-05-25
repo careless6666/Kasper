@@ -3,21 +3,29 @@
 var myAppDev = angular.module('myAppE2E', ['myApp', 'ngMockE2E','ngResource']);
 
 myAppDev.run(function($httpBackend, $resource) {
-  var users = [
-  {
-    name: 'user1',
-    domain:'domain1',
-    mail: 'mail1@mail.ru',
-    deparment: 'department1',
-    phone: 'phone1'
-   }, 
-  {
-    name: 'user2',
-    domain:'domain2',
-    mail: 'mail2@mail.ru',
-    deparment: 'department2',
-    phone: 'phone2'
-  }];
+  var users = [];  
+
+  for (var i = 0; i < 50; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 1
+  })
+  };
+
+  for (var i = 51; i < 70; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 2
+  })
+  };
 
   $httpBackend.whenGET('/users').respond(users);
 
@@ -28,8 +36,14 @@ myAppDev.run(function($httpBackend, $resource) {
   });
 
   $httpBackend.whenGET('views/list-view.html').passThrough();;
-  $httpBackend.whenGET('views/title-panel.html').passThrough();;
+  $httpBackend.whenGET('views/tile-panel.html').passThrough();;
   $httpBackend.whenGET('views/trello-panel.html').passThrough();;
+
+  function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
 
 });
 })(window.angular);

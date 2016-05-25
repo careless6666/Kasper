@@ -33,10 +33,10 @@ myApp.controller('main', ['$http','userservice' , function($http) {
             templateUrl:'views/list-view.html',
             controller:'ListViewController'
         });
-        $routeProvider.when('/titlepanel',
+        $routeProvider.when('/tilepanel',
         {
-            templateUrl:'views/title-panel.html',
-            controller:'TitlePanelController'
+            templateUrl:'views/tile-panel.html',
+            controller:'TilePanelController'
         });
         $routeProvider.when('/trellopanel',
         {

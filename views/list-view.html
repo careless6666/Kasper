@@ -1,4 +1,26 @@
-<div ng-controller="ListViewController">
- {{12 + 15}}
+<div class="container main-container">
+	<div ng-controller="ListViewController">
+
+		<table class="table  table-striped">
+			<thead>
+      <tr>
+        <th>User Name</th>
+        <th class='small-view'>Domain</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr ng-repeat="x in Users">
+			    <td>{{ x.Name }}</td>
+			    <td class='small-view'>{{ x.Domain }}</td>
+			    <td>{{ x.Mail }}</td>
+			    <td>{{ x.Department }}</td>
+			    <td>{{ x.Phone }}</td>
+			</tr>
+			</tbody>
+		</table>
+
+	</div>
 </div>
-lol

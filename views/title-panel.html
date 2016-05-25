@@ -1,3 +1,11 @@
-<div ng-controller="TitlePanelController">
- {{12 * 15}}
+<div class="container">
+	<div ng-controller="TilePanelController">
+		<div ng-repeat="x in Users" >
+			<div class="thumbnail tile tile-medium">
+				<span>{{x.Name}} </span>
+				<img src="/img/nobody_m.original.jpg">
+
+			</div>
+		</div>
+	</div>
 </div>

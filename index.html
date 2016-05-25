@@ -15,26 +15,45 @@
   <script src="js/list_view.js"></script>
   <script src="js/title_panel_view.js"></script>
   <script src="js/trello-panel_view.js"></script>
+  <script type="text/javascript" src="extern/jquery-2.2.4.js"></script>
+  <script type="text/javascript" src="extern/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="extern/bootstrap-3.3.6-dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+  <link rel="stylesheet" type="text/css" href="css/tile_view.css">
+  <link rel="stylesheet" type="text/css" href="css/trello_view.css">
 
 
   
 </head>
 <body ng-app="myAppE2E">
-  <nav><a href="#/list">List</a>|<a href="#/titlepanel">Title Panel</a>|<a href="#/trellopanel">Trello panel</a></nav>
+	<div class="container">
+		<div class="container nav-list-container">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">TestTask</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#/list">List</a></li>
+	    <li><a href="#/tilepanel">Tile Panel</a></li>
+	    <li><a href="#/trellopanel">Trello panel</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	</div>
   <div ng-view></div>
-  <div ng-controller="main as $ctrl">
-<form name="newUserForm" ng-submit="$ctrl.addUser($ctrl.newUser)">
-  <input type="text" ng-model="$ctrl.newUser.name">
-  <input type="submit" value="Add User">
-</form>
 
-
-
-<h1>Users</h1>
-<ul>
-  <li ng-repeat="user in $ctrl.users">{{user.name}}</li>
-</ul>
 </div>
+	</div>
+  
 </body>
 </html>
 

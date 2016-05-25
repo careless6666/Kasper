@@ -1,0 +1,11 @@
+.trello-container{
+	overflow: auto;
+	padding-left: 0;
+	background-image: url(/img/blurred-home-bg.jpg);
+	background-size:cover;
+}
+
+.trello-panel{
+	width: 250px;
+	margin: 15px;
+}

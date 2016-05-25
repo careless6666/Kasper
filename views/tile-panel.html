@@ -1,0 +1,15 @@
+<div class="container main-container">
+	<div ng-controller="TilePanelController">
+		<div ng-repeat="x in Users" >
+			<div class="thumbnail tile tile-medium">
+				<span class="tile-header">{{x.Name}} </span>
+				<div class="small-pad"></div>
+				<img class="profile-pic" src="/img/nobody_m.original.jpg">
+				<div class="small-pad"></div>
+					<span>{{x.Department}}</span>
+				<div class="small-pad"></div>				
+				<span>{{x.Phone}}</span>
+			</div>
+		</div>
+	</div>
+</div>
