@@ -3,7 +3,7 @@
   'use strict';
 var myApp = angular.module('myApp', ['ngRoute','ngResource']);
 
-myApp.controller('main', function($http) {
+myApp.controller('main', ['$http','userservice' , function($http) {
   var ctrl = this;
 
   ctrl.users = [];
@@ -26,7 +26,8 @@ myApp.controller('main', function($http) {
 
   ctrl.getUsers();
 
-}).config(function($routeProvider){
+}])
+.config(function($routeProvider){
         $routeProvider.when('/list',
         {
             templateUrl:'views/list-view.html',
@@ -45,6 +46,14 @@ myApp.controller('main', function($http) {
 
         $routeProvider.otherwise({redirectTo: '/list'});
      });
+
+
+myApp.factory('userservice', ['$http', function($http) {
+        return { async: function() {
+          return $http.get('/users')  //1. this returns promise
+        }
+      };
+  }]);
 
 //})(window.angular);
 
