@@ -1,11 +1,61 @@
-.trello-container{
-	overflow: auto;
-	padding-left: 0;
+.trello-container {
+	
+	position: absolute;
+	left:0;
 	background-image: url(/img/blurred-home-bg.jpg);
 	background-size:cover;
+	min-width: 2600px;
+	
 }
 
 .trello-panel{
 	width: 250px;
 	margin: 15px;
+	float: left;
+}
+
+.trello-image-profile{
+	width: 40px;
+	height: 40px;
+}
+
+.tile-group{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 6px;
+}
+
+.tile-title{
+	font-weight: bold;
+}
+
+.tile-items{
+	margin-left: 12px;
+}
+
+.tile-mail{
+	font-size: 12px;
+}
+
+.tile-container {
+	border-style: solid;
+	border-width: 1px;
+    border-radius: 6px;
+	border-color: lightgray;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 5px;
+}
+
+.tile-container:hover {
+	background-color: lightgray;
+	cursor: pointer;
+} 
+
+.trelo-scroll{
+	overflow: auto;
+    width: 100%;
+    height: calc(100% - 72px);
+    position: absolute;
+    left: 0;
 }

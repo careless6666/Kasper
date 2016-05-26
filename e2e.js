@@ -27,6 +27,83 @@ myAppDev.run(function($httpBackend, $resource) {
   })
   };
 
+  for (var i = 71; i < 80; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 3
+  })
+  };
+
+  for (var i = 81; i < 100; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 4
+  })
+  };
+
+  for (var i = 101; i < 110; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 5
+  })
+  };
+
+  for (var i = 111; i < 150; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 6
+  })
+  };
+
+  for (var i = 151; i < 170; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 7
+  })
+  };
+
+  for (var i = 171; i < 200; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 8
+  })
+  };
+
+  for (var i = 201; i < 300; i++) {
+    users.push({
+    Name: 'User ' + i,
+    Domain:'domain' + i,
+    Mail: 'mail' + i + '@mail.ru',
+    Department: 'Department' + i,
+    Phone: '8 (912) 779 ' + pad(i,4),
+    GroupId: 9
+  })
+  };
+
   $httpBackend.whenGET('/users').respond(users);
 
   $httpBackend.whenPOST('/users').respond(function(method, url, data) {
