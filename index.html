@@ -51,6 +51,58 @@
 	</div>
   <div ng-view></div>
 
+<div ng-controller="main">
+  
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#userModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="userModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User Profile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev-group">
+            <div>
+            <h3>User Name</h3>
+              <img src="/img/nobody_m.original.jpg" class="prev-profile-img">
+            </div>
+      
+                     
+              
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="email">User Name:</label>
+                  <div class="col-sm-8">
+                    <span>Name</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">Departmet:</label>
+                  <div class="col-sm-8">          
+                    <span>Department</span>
+                  </div>
+                </div>
+              </form>
+              
+          </div>
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
 </div>
 	</div>
   
