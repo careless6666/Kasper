@@ -3,7 +3,7 @@
 
 		<table class="table  table-striped">
 			<thead>
-      <tr>
+      <tr >
         <th>User Name</th>
         <th class='small-view'>Domain</th>
         <th>Email</th>
@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-			<tr ng-repeat="x in Users">
+			<tr ng-repeat="x in Users" ng-click="ShowProfile(x)" class="hr-row">
 			    <td>{{ x.Name }}</td>
 			    <td class='small-view'>{{ x.Domain }}</td>
 			    <td>{{ x.Mail }}</td>

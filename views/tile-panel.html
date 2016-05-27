@@ -1,6 +1,6 @@
 <div class="container main-container">
 	<div ng-controller="TilePanelController">
-		<div ng-repeat="x in Users" >
+		<div ng-repeat="x in Users" ng-click="ShowProfile(x)">
 			<div class="thumbnail tile tile-medium">
 				<span class="tile-header">{{x.Name}} </span>
 				<div class="small-pad"></div>
