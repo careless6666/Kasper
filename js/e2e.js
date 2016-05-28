@@ -1,6 +1,9 @@
-(function(angular) {
+define(['angular', 'angular-mocks', 'angular-route', 'angular-resource'], function (angular) {
+	
+	//(function(angular) {
   'use strict';
-var myAppDev = angular.module('myAppE2E', ['myApp', 'ngMockE2E','ngResource']);
+  var myAppDev = angular.module('myAppE2E', ['myApp', 'ngMockE2E', 'ngRoute', 'ngResource']);
+  //var myAppDev = angular.module('myAppE2E', ['ngRoute']);
 
 myAppDev.run(function($httpBackend, $resource) {
   var users = [];  
@@ -124,4 +127,6 @@ myAppDev.run(function($httpBackend, $resource) {
 }
 
 });
-})(window.angular);
+//})(window.angular);
+});
+

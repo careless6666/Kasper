@@ -1,78 +1,51 @@
 
-//(function(angular) {
-  'use strict';
-var myApp = angular.module('myApp', ['ngRoute','ngResource']);
-
-myApp.controller('main', function($http, userservice, $scope) {
-  var ctrl = this;
-
-  ctrl.users = [];
-  ctrl.newUser = {
-    name: ''
-  };
-
-  ctrl.getUsers = function() {
-    $http.get('/users').then(function(response) {
-      ctrl.users = response.data;
-    });
-  };
-
-  ctrl.addUser = function(user) {
-    $http.post('/users', user).then(function() {
-      ctrl.newUser = {name: ''};
-      return ctrl.getUsers();
-    });
-  };
-
-  ctrl.getUsers();
-
-  $scope.$watch(function(){
-    $scope.PreviewName = userservice.Preview.Name;
-    $scope.PreviewMail = userservice.Preview.Mail;
-  });
-  
-  
-
-})
-.config(function($routeProvider){
-        $routeProvider.when('/list',
-        {
-            templateUrl:'views/list-view.html',
-            controller:'ListViewController'
-        });
-        $routeProvider.when('/tilepanel',
-        {
-            templateUrl:'views/tile-panel.html',
-            controller:'TilePanelController'
-        });
-        $routeProvider.when('/trellopanel',
-        {
-            templateUrl:'views/trello-panel.html',
-            controller:'TrelloPanelController'
-        });
-
-        $routeProvider.when('/hw',
-        {
-            templateUrl:'views/hello-world.html',
-            controller:'TrelloPanelController'
-        });
-
-        $routeProvider.otherwise({redirectTo: '/hw'});
-     });
-
-
-myApp.factory('userservice', ['$http', function($http) {
-        return { async: function() {
-          return $http.get('/users')  //1. this returns promise
+requirejs.config({
+  paths: {
+            angular: "angular",
+            'angular-mocks': "angular-mocks",
+            'angular-route': "angular-route",
+            'angular-resource': "angular-resource",
+            'jquery': 'jquery-2.2.4',
+            'bootstrap': '/extern/bootstrap-3.3.6-dist/js/bootstrap'
+	      },
+	shim:{
+		angular: {
+            exports: "angular"
         },
-        Preview:{
-            Name:''
-        }
-      };
-  }]);
+		'angular-mocks': {
+		    deps: ["angular"],
+        },
+		'angular-route': {
+		    deps: ["angular"],
+		},
+		bootstrap: {
+		    deps: ['jquery']
+	    },
+        init: {
+            deps: ["angular"],
+        },
+        e2e: {
+            deps: ["init"],
+        },
+		'angular-resource': {
+		    deps: ["angular"],
+		},
+		list_view: {
+		    deps: ["init"],
+		},
+		'trello-panel_view': {
+		    deps: ["init"],
+		},
+		title_panel_view: {
+		    deps: ["init"],
+		},
+		
 
-//})(window.angular);
+	}
+});
 
-//require(["util"], function(util) {
- 
-//});
+require(['jquery', 'bootstrap', 'angular', 'angular-mocks', 'angular-route', 'angular-resource', 'init', 'e2e', 'list_view', 'title_panel_view', 'trello-panel_view'], function () {
+    angular.bootstrap(document, ['myAppE2E']);
+    });
+
+var myApp;

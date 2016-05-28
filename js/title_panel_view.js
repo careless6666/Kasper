@@ -1,3 +1,5 @@
+"use strict";
+define(['jquery'], function ($) {
 myApp.controller('TilePanelController',
     function TilePanelController($scope, userservice){
 				userservice.async().then(function(d) { 
@@ -13,3 +15,4 @@ myApp.controller('TilePanelController',
      	  }				
     }
 )
+});
