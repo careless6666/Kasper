@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Example - example-httpbackend-e2e-testing-production</title>
+  <title>Test task</title>
   
 
 
-  <script src="angular.js"></script>
-  <script src="angular-mocks.js"></script>
-  <script src="angular-route.js"></script>
-  <script src="angular-resource.js"></script>
-  <script src="app.js"></script>
-  <script src="e2e.js"></script>
+  <script src="extern/angular.js"></script>
+  <script src="extern/angular-mocks.js"></script>
+  <script src="extern/angular-route.js"></script>
+  <script src="extern/angular-resource.js"></script>
+<!--<script type="text/javascript" data-main="js/app.js" src="extern/require.js"></script>-->
+
+  <script src="js/app.js"></script>
+  <script src="js/e2e.js"></script>
   <script src="js/list_view.js"></script>
   <script src="js/title_panel_view.js"></script>
   <script src="js/trello-panel_view.js"></script>
   <script type="text/javascript" src="extern/jquery-2.2.4.js"></script>
   <script type="text/javascript" src="extern/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
   <link rel="stylesheet" type="text/css" href="extern/bootstrap-3.3.6-dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/site.css">
   <link rel="stylesheet" type="text/css" href="css/tile_view.css">
   <link rel="stylesheet" type="text/css" href="css/trello_view.css">
-
+  <link rel="stylesheet" type="text/css" href="css/hw.css">
+  <link rel="icon" sizes="16x16" href="/img/favicon-16x16.png">
 
   
 </head>
 <body ng-app="myAppE2E">
-	<div class="container">
+	
 		<div class="container nav-list-container">
 
 <nav class="navbar navbar-inverse">
@@ -37,7 +41,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">TestTask</a>
+      <a class="navbar-brand" href="#/hw">TestTask</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -49,12 +53,10 @@
   </div>
 </nav>
 	</div>
-  <div ng-view></div>
+  <div ng-view class="view-container"></div>
 
-<div ng-controller="main">
+<div ng-controller="main" id="userPreviewControl">
   
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#userModal">Open Modal</button>
-
   <!-- Modal -->
   <div class="modal fade" id="userModal" role="dialog">
     <div class="modal-dialog">
@@ -67,28 +69,27 @@
         </div>
         <div class="modal-body">
           <div class="prev-group">
-            <div>
-            <h3>User Name</h3>
-              <img src="/img/nobody_m.original.jpg" class="prev-profile-img">
+            
+            <div class="col-sm-3 ">
+            	<img src="/img/nobody_m.original.jpg" class="prev-profile-img">
             </div>
-      
-                     
-              
-              <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="email">User Name:</label>
-                  <div class="col-sm-8">
-                    <span>Name</span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="pwd">Departmet:</label>
-                  <div class="col-sm-8">          
-                    <span>Department</span>
-                  </div>
-                </div>
-              </form>
-              
+            <div class="col-sm-4">
+            	<div>
+            		<div>
+            			<h3 class="prev-user-name">{{PreviewName}}</h3>        
+            		</div>
+            		<div>
+            			<span >{{PreviewMail}}</span> 
+            		</div>
+            	</div>
+            	
+            	
+            </div>
+            <div class="col-sm-4 description">
+            	Profession description: Graphic & Designer,
+            	QA Engineer, Frontend Developer
+            </div>
+
           </div>
           
 
@@ -104,7 +105,7 @@
 </div>
 
 </div>
-	</div>
+
   
 </body>
 </html>

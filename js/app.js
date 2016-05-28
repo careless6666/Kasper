@@ -3,7 +3,7 @@
   'use strict';
 var myApp = angular.module('myApp', ['ngRoute','ngResource']);
 
-myApp.controller('main', ['$http','userservice' , function($http) {
+myApp.controller('main', function($http, userservice, $scope) {
   var ctrl = this;
 
   ctrl.users = [];
@@ -26,7 +26,14 @@ myApp.controller('main', ['$http','userservice' , function($http) {
 
   ctrl.getUsers();
 
-}])
+  $scope.$watch(function(){
+    $scope.PreviewName = userservice.Preview.Name;
+    $scope.PreviewMail = userservice.Preview.Mail;
+  });
+  
+  
+
+})
 .config(function($routeProvider){
         $routeProvider.when('/list',
         {
@@ -44,16 +51,28 @@ myApp.controller('main', ['$http','userservice' , function($http) {
             controller:'TrelloPanelController'
         });
 
-        $routeProvider.otherwise({redirectTo: '/list'});
+        $routeProvider.when('/hw',
+        {
+            templateUrl:'views/hello-world.html',
+            controller:'TrelloPanelController'
+        });
+
+        $routeProvider.otherwise({redirectTo: '/hw'});
      });
 
 
 myApp.factory('userservice', ['$http', function($http) {
         return { async: function() {
           return $http.get('/users')  //1. this returns promise
+        },
+        Preview:{
+            Name:''
         }
       };
   }]);
 
 //})(window.angular);
 
+//require(["util"], function(util) {
+ 
+//});

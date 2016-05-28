@@ -4,7 +4,8 @@
 	left:0;
 	background-image: url(/img/blurred-home-bg.jpg);
 	background-size:cover;
-	min-width: 2600px;
+	min-width: 1200px;
+	width: 100%;
 	
 }
 

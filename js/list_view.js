@@ -4,7 +4,12 @@ myApp.controller('ListViewController',
 			    if(d.status == 200){
 			    	$scope.Users = d.data;
 			    }
-		    
-     	  });				
+     	  });	
+
+     	  $scope.ShowProfile = function(e){
+     	  	userservice.Preview.Name = e.Name;
+     	  	userservice.Preview.Mail = e.Mail;
+     	  	$("#userModal").modal();
+     	  }			
     }
 )

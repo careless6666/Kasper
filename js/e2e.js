@@ -115,6 +115,7 @@ myAppDev.run(function($httpBackend, $resource) {
   $httpBackend.whenGET('views/list-view.html').passThrough();;
   $httpBackend.whenGET('views/tile-panel.html').passThrough();;
   $httpBackend.whenGET('views/trello-panel.html').passThrough();;
+  $httpBackend.whenGET('views/hello-world.html').passThrough();;
 
   function pad(num, size) {
     var s = num+"";

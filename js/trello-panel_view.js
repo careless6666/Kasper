@@ -6,5 +6,11 @@ myApp.controller('TrelloPanelController',
 			    }
 		    
      	  });
+
+				$scope.ShowProfile = function(e){
+	     	  	userservice.Preview.Name = e.Name;
+	     	  	userservice.Preview.Mail = e.Mail;
+	     	  	$("#userModal").modal();
+     	  }		
     }
 )

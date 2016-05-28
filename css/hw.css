@@ -1,0 +1,31 @@
+.main-fon{
+	background-image: url(../img/3d-abstract-art-wallpaper-awesome-resolution-ix211w35ae1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+	height: 100%;
+}
+
+.view-container{
+	height: calc(100% - 92px);
+}
+
+.main-fon{
+	height: 100%;
+}
+.main-fon div{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.h-left{
+	color: white;
+	margin-right: 15px;
+	font-size: 5em;
+}
+
+.h-right{
+	color: yellow;
+	font-size: 5em;
+}
